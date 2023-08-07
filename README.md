@@ -9,8 +9,6 @@ This is an official implementation of the paper "Towards Real-World Video Denosi
 * numpy
 * cv2
 * skimage
-* tqdm
-* av 8.0.2
 * DCNv2
 * easydict
 * yaml
