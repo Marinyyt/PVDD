@@ -19,9 +19,9 @@ git clone https://github.com/Marinyyt/PVDD.git
 cd PVDD
 ```
 
-#### Train
+#### Train with pvdd
 
-#### Test
+#### Test with pvdd
 
 ### pre-trained models
 
