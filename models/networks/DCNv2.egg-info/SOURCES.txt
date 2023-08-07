@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/vision.cpp
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/cpu/dcn_v2_cpu.cpp
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/cpu/dcn_v2_im2col_cpu.cpp
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/cpu/dcn_v2_psroi_pooling_cpu.cpp
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/cuda/dcn_v2_cuda.cu
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/cuda/dcn_v2_im2col_cuda.cu
+/home/SENSETIME/yuyitong/下载/DCNv2-master/src/cuda/dcn_v2_psroi_pooling_cuda.cu
+DCNv2.egg-info/PKG-INFO
+DCNv2.egg-info/SOURCES.txt
+DCNv2.egg-info/dependency_links.txt
+DCNv2.egg-info/top_level.txt
