@@ -4,7 +4,16 @@ This is an official implementation of the paper "Towards Real-World Video Denosi
 ## Code
 
 ### Dependencies
-
+* Python 3.6
+* PyTorch >= 1.1.0
+* numpy
+* cv2
+* skimage
+* tqdm
+* av 8.0.2
+* DCNv2
+* easydict
+* yaml
 ### Quick Start
 
 #### Train
