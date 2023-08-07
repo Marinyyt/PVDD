@@ -1,8 +1,8 @@
 # PVDD
 This is an official implementation of the paper 《Towards Real-World Video Denosing: A Practical Video Denosing Dataset and Network》
-## Download Dataset
-### Generating RGB data
-Modify the configuration in batch_generate.py and run the following command:
-```python
-python batch_generate.py
-```
+##Dataset
+Please download our dataset from Google Drive or Baidu Drive.
+|     | sRGB  | raw  |
+|  ----  | ----  | ---- |
+| Training Dataset  | xxx | xxx |
+| Testing Dataset  | xxx | xxx |
