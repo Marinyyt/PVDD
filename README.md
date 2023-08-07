@@ -15,7 +15,7 @@ This is an official implementation of the paper "Towards Real-World Video Denosi
 ### Quick Start
 Clone this github repo.
 ```bash
-git clone https://github.com/xiezw5/Component-Divide-and-Conquer-for-Real-World-Image-Super-Resolution
+git clone https://github.com/Marinyyt/PVDD.git
 cd PVDD
 ```
 
