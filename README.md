@@ -45,17 +45,17 @@ python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_charbo_bs1_davis_
 3. Run.
 ```bash
 # PVDD
-python test_video_pvdd_server.py --model_file / --save_path / --test_path --num_frame 5
-python test_video_pvdd_level_server.py --model_file / --save_path / --test_path --num_frame 5
+python test_video_pvdd_server.py --model_file /USER_MODEL_CKPT_PATH --save_path /USER_SAVE_PATH --test_path /USER_TEST_DATA_PATH --num_frame 5
+python test_video_pvdd_level_server.py --model_file /USER_MODEL_CKPT_PATH --save_path /USER_SAVE_PATH --test_path /USER_TEST_DATA_PATH --num_frame 5
 
-python test_video_pvdd_raw_server.py --model_file / --save_path / --test_path --num_frame 5
-python test_video_pvdd_level_raw_server.py --model_file / --save_path / --test_path --num_frame 5
+python test_video_pvdd_raw_server.py --model_file /USER_MODEL_CKPT_PATH --save_path /USER_SAVE_PATH --test_path /USER_TEST_DATA_PATH --num_frame 5
+python test_video_pvdd_level_raw_server.py --model_file /USER_MODEL_CKPT_PATH --save_path /USER_SAVE_PATH --test_path /USER_TEST_DATA_PATH --num_frame 5
 
 # DAVIS
-python test_video_davis_server.py --model_file / --save_path / --test_path --num_frame 5
+python test_video_davis_server.py --model_file /USER_MODEL_CKPT_PATH --save_path /USER_SAVE_PATH --test_path /USER_TEST_DATA_PATH --num_frame 5
 
 # CRVD
-python test_video_crvd_server.py --model_file / --save_path / --test_path --num_frame 5
+python test_video_crvd_server.py --model_file /USER_MODEL_CKPT_PATH --save_path /USER_SAVE_PATH --test_path /USER_TEST_DATA_PATH --num_frame 5
 ```
 
 
