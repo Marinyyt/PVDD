@@ -19,18 +19,54 @@ git clone https://github.com/Marinyyt/PVDD.git
 cd PVDD
 ```
 
-#### Train with pvdd
+#### Training
+1. Download PVDD|[CRVD](https://mega.nz/file/Hx8TgLQY#0MoZSqdrQ_HgIc4OP6_jmwAwupNctPc7ZilXLV_FAQ0)|[DAVIS]() dataset and unpack them to any place you want.
+2. Run ```train.py``` using the corresponding yaml files.
+```bash
+# PVDD sRGB 
+python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_02_charbo_bs1_pvdd_model.yaml --save_path /USER_SAVE_PATH
+python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_02_level_charbo_bs1_pvdd_model.yaml --save_path /USER_SAVE_PATH
 
-#### Test with pvdd
+# PVDD RAW
+python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_02_charbo_bs1_pvdd_raw_model.yaml --save_path /USER_SAVE_PATH
+python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_02_level_charbo_bs1_pvdd_raw_model.yaml --save_path /USER_SAVE_PATH
+
+# CRVD sRGB
+python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_charbo_bs1_crvd_model.yaml --save_path /USER_SAVE_PATH
+
+# DAVIS sRGB
+python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_charbo_bs1_davis_model.yaml --save_path /USER_SAVE_PATH
+```
+3. You can find the results and logs in ```save_path```.
+
+
+#### Testing
+1. Download our pre-trained models and unpack them to any place you want or use your pre-trained models.
+3. Run.
+```bash
+# PVDD
+python test_video_pvdd_server.py --model_file / --save_path / --test_path --num_frame 5
+python test_video_pvdd_level_server.py --model_file / --save_path / --test_path --num_frame 5
+
+python test_video_pvdd_raw_server.py --model_file / --save_path / --test_path --num_frame 5
+python test_video_pvdd_level_raw_server.py --model_file / --save_path / --test_path --num_frame 5
+
+# DAVIS
+python test_video_davis_server.py --model_file / --save_path / --test_path --num_frame 5
+
+# CRVD
+python test_video_crvd_server.py --model_file / --save_path / --test_path --num_frame 5
+```
+
 
 ### pre-trained models
-
+[Google Drive]() | [Baidu Drive]()
 ## Dataset
 Please download our dataset from Google Drive or Baidu Drive.
 |     | sRGB  | raw  |
 |  ----  | ----  | ---- |
-| Training Dataset  | [google](https://drive.google.com/drive/folders/1rMbZqd84S1Py6buhNH6suPDnyFJjITLe?usp=sharing), [baidu](https://pan.baidu.com/s/1qiX52NPDixHwLyPKzFUHXQ?pwd=a5nt)| [google](https://drive.google.com/drive/folders/1oT68UZwR9pByINBZam_1NrciFVwdhtj8?usp=sharing), [baidu](https://pan.baidu.com/s/1qiX52NPDixHwLyPKzFUHXQ?pwd=a5nt) |
-| Testing Dataset  | [google](https://drive.google.com/drive/folders/1TRSlPo1CiBPunJVC1NQmV5oLcLLo0laU?usp=sharing), baidu | [google](https://drive.google.com/drive/folders/1n1wdKLIUfRNoykEPT6A6X-NsIJnkF76i?usp=sharing), baidu |
+| Training Dataset  | [Google Drive](https://drive.google.com/drive/folders/1rMbZqd84S1Py6buhNH6suPDnyFJjITLe?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/1qiX52NPDixHwLyPKzFUHXQ?pwd=a5nt)| [Google Drive](https://drive.google.com/drive/folders/1oT68UZwR9pByINBZam_1NrciFVwdhtj8?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/1qiX52NPDixHwLyPKzFUHXQ?pwd=a5nt) |
+| Testing Dataset  | [Google Drive](https://drive.google.com/drive/folders/1TRSlPo1CiBPunJVC1NQmV5oLcLLo0laU?usp=sharing), Baidu Drive | [Google Drive](https://drive.google.com/drive/folders/1n1wdKLIUfRNoykEPT6A6X-NsIJnkF76i?usp=sharing), Baidu Drive |
 
 ## Citation
 If you find our work useful in your research or publication, please cite:
