@@ -21,7 +21,7 @@ cd PVDD
 
 #### Training
 1. Download PVDD|[CRVD](https://mega.nz/file/Hx8TgLQY#0MoZSqdrQ_HgIc4OP6_jmwAwupNctPc7ZilXLV_FAQ0)|[DAVIS]() dataset and unpack them to any place you want.
-2. Run ```train.py``` using the corresponding yaml files. (Please change the ```data_path``` argument in yaml files and noise level file path in dataset class.)
+2. Run ```train.py``` using the corresponding yaml files. (Please change the ```data_path``` argument in yaml files and noise-level file path in Dataset class.)
 ```bash
 # PVDD sRGB 
 python train.py --config /USER_PATH/PVDD/configs/PVDD_pvdd0815_02_charbo_bs1_pvdd_model.yaml --save_path /USER_SAVE_PATH
