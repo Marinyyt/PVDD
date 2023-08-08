@@ -60,7 +60,7 @@ python test_video_crvd_server.py --model_file /USER_MODEL_CKPT_PATH --save_path 
 
 
 ### pre-trained models
-[Google Drive](https://drive.google.com/drive/folders/1qEmupCR4JcaPNky3B5ldRN88t8K6CGaG) | [Baidu Drive]()
+[Google Drive](https://drive.google.com/drive/folders/1qEmupCR4JcaPNky3B5ldRN88t8K6CGaG) | [Baidu Drive](https://pan.baidu.com/s/1lO4OKMWBWqd4DrZG1QRWNw?pwd=s9bq)
 ## Dataset
 Please download our dataset from Google Drive or Baidu Drive.
 |     | sRGB  | raw  |
