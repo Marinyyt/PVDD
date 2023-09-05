@@ -20,7 +20,7 @@ cd PVDD
 ```
 
 #### Training
-1. Download PVDD|[CRVD](https://mega.nz/file/Hx8TgLQY#0MoZSqdrQ_HgIc4OP6_jmwAwupNctPc7ZilXLV_FAQ0)|[DAVIS](https://pan.baidu.com/s/1P6-ei5mKIKxEo1z4YRLWIQ?pwd=ss56) dataset and unpack them to any place you want.
+1. Download [PVDD](## Dataset)|[CRVD](https://mega.nz/file/Hx8TgLQY#0MoZSqdrQ_HgIc4OP6_jmwAwupNctPc7ZilXLV_FAQ0)|[DAVIS](https://pan.baidu.com/s/1P6-ei5mKIKxEo1z4YRLWIQ?pwd=ss56) dataset and unpack them to any place you want.
 2. Run ```train.py``` using the corresponding yaml files. (Please change the ```data_path``` argument in yaml files and noise-level file path in Dataset class.)
 ```bash
 # PVDD sRGB 
@@ -62,7 +62,7 @@ python test_video_crvd_server.py --model_file /USER_MODEL_CKPT_PATH --save_path 
 ### pre-trained models
 [Google Drive](https://drive.google.com/drive/folders/1qEmupCR4JcaPNky3B5ldRN88t8K6CGaG) | [Baidu Drive](https://pan.baidu.com/s/1lO4OKMWBWqd4DrZG1QRWNw?pwd=s9bq)
 ## Dataset
-Please download our dataset from Google Drive or Baidu Drive.
+Please download PVDD from Google Drive or Baidu Drive.
 |     | sRGB  | raw  |
 |  ----  | ----  | ---- |
 | Training Dataset  | [Google Drive](https://drive.google.com/drive/folders/1rMbZqd84S1Py6buhNH6suPDnyFJjITLe?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/1qiX52NPDixHwLyPKzFUHXQ?pwd=a5nt)| [Google Drive](https://drive.google.com/drive/folders/1oT68UZwR9pByINBZam_1NrciFVwdhtj8?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/1qiX52NPDixHwLyPKzFUHXQ?pwd=a5nt) |
