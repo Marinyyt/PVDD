@@ -1,0 +1,152 @@
+RunnerConfig:
+  type: VideoRunner
+  epochs: 4000
+  train_batch_size: 1
+  val_batch_size: 1
+  num_workers: 16
+  start_epoch: 0
+  show_loss_iter: 100
+  show_img_iter: 1000
+  save_mode: iter   # epoch | iter
+  save_by_epoch: 1
+  save_by_iter: 10000
+
+  ModelConfig:
+    type: BasicVSRModel
+
+    Network:
+      GNet:
+        type: pvdd0815
+        init: 
+          type: 'xavier'
+          gain: 0.02
+        resume_path: null # '/data/codes/gitlab/portrait_restoration/logs/model/g_net_1.pth'   # None | str
+        args:
+          # input_nc: 3
+          num_feat: 64
+          num_block: 3
+          num_block_f: 3
+          num_block_pre: 3
+          dynamic_refine_thres: 255.
+          is_sequential_cleaning: False
+          spynet_path: '/mnt/lustre/yuyitong/portrait_restoration/models/networks/spynet_sintel_final-3d2a1287.pth' #/data2/model_hub/flownet/spynet_sintel_final-3d2a1287.pth
+          depth: 2
+          depth_pre: 1
+          num_head: 8
+          num_frames: 2
+          window_size: [8, 8]
+          window_size_pre: [16, 16]
+          mlp_ratio: 2.
+          qkv_bias: True
+          qk_scale: null
+          drop_rate: 0.
+          attn_drop_rate: 0
+          drop_path_rate: 0.
+          drop_path: 0.
+          mlp: '04'
+      DNet:
+        type: UNetDiscriminatorSN # ResidualDiscriminator
+        init:
+          type: 'xavier'
+          gain: 0.02
+        resume_path: null   # None | str
+        args:
+#          input_nc: 3
+#          ndf: 16
+#          get_feat: False
+          in_channels: 3
+          mid_channels: 32
+
+    Loss:
+      PixelLoss:
+        L1Loss:
+          type: L1_CharbonnierLoss
+          weight: 1.
+
+
+    Optimizer:
+      OptimG:
+        type: Adam
+        args:
+          lr: !!float 1e-4
+          betas: [0.9, 0.999]
+      OptimD:
+        type: Adam
+        args:
+          lr: !!float 1e-4
+          betas: [0.9, 0.999]
+    Scheduler:
+
+  DatasetConfig:
+    TrainDataset:
+      type: VideoDataset
+      memcache:
+        enable: False
+        server_path : '/mnt/lustre/share/memcached_client/server_list.conf'
+        client_path : 'mc_pytorch/client.conf'
+      data_path: ['/mnt/lustrenew/share_data/yuyitong/data/PVDD/rgb']
+      num_frame: 10
+      meta_info_file: '/home/SENSETIME/yuyitong/download/REDS/train/meta_info_REDs_train_sharp.json'
+      random_reverse: False
+      img_size: 128
+      normalize: False
+      crop_size: 128
+      y_only: False
+      Augmentation: null
+      BatchAugment: null
+      Distortion:
+        type: VideoDegradation
+        args:
+          scale: 2
+          resize_prob: [0.2, 0.7, 0.1]
+          resize_range: [0.75, 1.2]
+          gaussian_noise_prob: 0.5
+          noise_range: [1, 10]
+          poisson_scale_range: [0.05, 1]
+          gray_noise_prob: 0.4
+          jpeg_range: [50, 95]
+          second_blur_prob: 0.5
+          resize_prob2: [0.3, 0.3, 0.4]
+          resize_range2: [0.75, 1.2]
+          gaussian_noise_prob2: 0.5
+          noise_range2: [1, 10]
+          poisson_scale_range2: [0.05, 1]
+          gray_noise_prob2: 0.4
+          jpeg_range2: [50, 95]
+          blur_kernel_size: [5, 7, 9, 11, 15]
+          kernel_list: ['iso', 'aniso', 'generalized_iso', 'generalized_aniso', 'plateau_iso', 'plateau_aniso']
+          kernel_prob: [0.45, 0.25, 0.12, 0.03, 0.12, 0.03]
+          sinc_prob: 0
+          blur_sigma: [0.2, 1.5]
+          betag_range: [0.5, 4]
+          betap_range: [1, 2]
+
+          blur_kernel_size2: [5, 7, 9, 11, 15]
+          kernel_list2: ['iso', 'aniso', 'generalized_iso', 'generalized_aniso', 'plateau_iso', 'plateau_aniso']
+          kernel_prob2: [0.45, 0.25, 0.12, 0.03, 0.12, 0.03]
+          sinc_prob2: 0
+          blur_sigma2: [0.2, 1.5]
+          betag_range2: [0.5, 4]
+          betap_range2: [1, 2]
+
+          final_sinc_prob: 0.5
+
+          codec: ['libx264', 'h264', 'mpeg4']
+          codec_prob: [0.3, 0.3, 0.4]
+          bitrate: [!!float 1e4, !!float 1e5]
+    ValDataset:
+      type: VideoDatasetVal
+      memcache:
+        enable: False
+        server_path : '/mnt/lustre/share/memcached_client/server_list.conf'
+        client_path : 'mc_pytorch/client.conf'
+      data_path: ['/mnt/lustrenew/share_data/yuyitong/data/PVDD/test/synNoiseData']
+      num_frame: 12
+      Augmentation: null
+      BatchAugment: null
+      Distortion: null
+
+    
+    
+    
+    
